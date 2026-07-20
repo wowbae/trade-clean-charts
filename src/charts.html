@@ -37,11 +37,15 @@
         "backgroundColor": "#0F0F0F",
         "gridColor": "rgba(242, 242, 242, 0.06)",
         "watchlist": [],
-        "withdateranges": false,
-        "compareSymbols": [],
-        "studies": []
+        "studies": [],
       }
       </script>
+    </div>
+    <!-- Таймер обратного отсчёта BTC -->
+    <div class="absolute top-3 right-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-sm border border-white/5 text-xs font-mono select-none" data-bar-timer="btc">
+      <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+      <span class="text-white/80">~</span>
+      <span class="text-white font-semibold tabular-nums" data-bar-countdown="btc">--</span>
     </div>
   </section>
 
@@ -70,14 +74,41 @@
         "backgroundColor": "#0F0F0F",
         "gridColor": "rgba(242, 242, 242, 0.06)",
         "watchlist": [],
-        "withdateranges": false,
-        "compareSymbols": [],
-        "studies": []
+        "studies": [],
       }
       </script>
     </div>
+    <!-- Таймер обратного отсчёта ETH -->
+    <div class="absolute top-3 right-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-sm border border-white/5 text-xs font-mono select-none" data-bar-timer="eth">
+      <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+      <span class="text-white/80">~</span>
+      <span class="text-white font-semibold tabular-nums" data-bar-countdown="eth">--</span>
+    </div>
   </section>
 
-  <script src="./main.js" defer></script>
+  <script>
+    (function() {
+      function pad(n) { return n < 10 ? '0' + n : n; }
+
+      function updateCountdown() {
+        var now = Date.now();
+        var msIn5m = 300000;
+        var elapsed = now % msIn5m;
+        var remaining = Math.max(0, msIn5m - elapsed);
+        var totalSec = Math.ceil(remaining / 1000);
+        var min = Math.floor(totalSec / 60);
+        var sec = totalSec % 60;
+        var text = min + ':' + pad(sec);
+
+        var el1 = document.querySelector('[data-bar-countdown="btc"]');
+        var el2 = document.querySelector('[data-bar-countdown="eth"]');
+        if (el1) el1.textContent = text;
+        if (el2) el2.textContent = text;
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
 </body>
 </html>
