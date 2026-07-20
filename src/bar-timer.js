@@ -9,7 +9,7 @@
   const TIMEFRAME_MS = 300_000; // 5 минут
 
   function pad(n) {
-    return n < 10 ? '0' : '' + n;
+    return n < 10 ? '0' + n : '' + n;
   }
 
   function createTimer() {
