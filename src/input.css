@@ -28,21 +28,16 @@ body {
 /* ════════════════════════════════════════
    СЕКЦИИ — SNAP + AMBIENT GLOW
    ════════════════════════════════════════ */
-/* Стили для секций лендинга — НЕ трогаем секции внутри TradingView виджета */
-main section[id],
-main section[data-glow],
-section[id]:not([aria-label$="Chart"]),
-section[data-glow]:not([aria-label$="Chart"]) {
+section[id],
+section[data-glow] {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   position: relative;
   overflow: hidden;
 }
 
-main section[id]::before,
-main section[data-glow]::before,
-section[id]:not([aria-label$="Chart"])::before,
-section[data-glow]:not([aria-label$="Chart"])::before {
+section[id]::before,
+section[data-glow]::before {
   content: '';
   position: absolute;
   inset: 0;
