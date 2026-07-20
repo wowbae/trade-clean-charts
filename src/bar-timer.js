@@ -16,13 +16,12 @@
     const wrapper = document.createElement('div');
     wrapper.setAttribute('data-bar-timer', '');
     wrapper.className =
-      'fixed top-4 right-4 z-50 pointer-events-none flex items-center gap-2 px-3 py-1.5 ' +
+      'fixed top-[31px] right-[31px] z-50 pointer-events-none flex items-center gap-2 px-3 py-1.5 ' +
       'rounded-lg bg-black/70 backdrop-blur-md border border-white/10 ' +
       'text-xs font-mono select-none shadow-xl shadow-black/40';
 
     wrapper.innerHTML =
       '<span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>' +
-      '<span class="text-white/60">~</span>' +
       '<span class="text-white font-semibold tabular-nums" data-bar-countdown>--</span>';
 
     document.body.appendChild(wrapper);
