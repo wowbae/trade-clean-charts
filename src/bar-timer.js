@@ -16,7 +16,7 @@
     const wrapper = document.createElement('div');
     wrapper.setAttribute('data-bar-timer', '');
     wrapper.className =
-      'fixed top-[51px] right-[31px] z-50 pointer-events-none flex items-center gap-2 px-3 py-1.5 ' +
+      'fixed top-[46px] right-[31px] z-50 pointer-events-none flex items-center gap-2 px-3 py-1.5 ' +
       'rounded-lg bg-black/70 backdrop-blur-md border border-white/10 ' +
       'text-xs font-mono select-none shadow-xl shadow-black/40';
 
