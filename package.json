@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "bunx tailwindcss -i src/input.css -o src/assets/styles.css --watch",
     "build:css": "bunx tailwindcss -i src/input.css -o dist/assets/styles.css --minify",
-    "build:copy": "cp src/index.html dist/index.html && cp src/charts.html dist/charts.html && cp src/main.js dist/main.js && cp src/bar-timer.js dist/bar-timer.js",
+"build:copy": "cp src/index.html dist/index.html && cp src/charts.html dist/charts.html && cp src/main.js dist/main.js && cp src/bar-timer.js dist/bar-timer.js && cp src/favicon.png dist/favicon.png",
     "build": "bun run build:css && bun run build:copy",
     "clean": "rm -rf dist",
     "preview": "bun run build && open dist/index.html"
