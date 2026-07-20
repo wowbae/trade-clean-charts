@@ -9,14 +9,14 @@
   const TIMEFRAME_MS = 300_000; // 5 минут
 
   function pad(n) {
-    return n < 10 ? '0' + n : '' + n;
+    return n < 10 ? '0' + n : String(n);
   }
 
   function createTimer() {
     const wrapper = document.createElement('div');
     wrapper.setAttribute('data-bar-timer', '');
     wrapper.className =
-      'fixed top-4 right-4 z-50 flex items-center gap-2 px-3 py-1.5 ' +
+      'fixed top-4 right-4 z-50 pointer-events-none flex items-center gap-2 px-3 py-1.5 ' +
       'rounded-lg bg-black/70 backdrop-blur-md border border-white/10 ' +
       'text-xs font-mono select-none shadow-xl shadow-black/40';
 
